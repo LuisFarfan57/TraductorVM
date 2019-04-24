@@ -113,7 +113,7 @@ public class jfPrincipal extends javax.swing.JFrame {
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         // TODO add your handling code here:
         JFileChooser dialogo = new JFileChooser();
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter(".asm", "asm");
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter(".vm", "vm");
         File fichero;
         String rutaArchivo;
         dialogo.setFileFilter(filtro);
@@ -144,7 +144,7 @@ public class jfPrincipal extends javax.swing.JFrame {
             }
         }
         else{
-            JOptionPane.showMessageDialog(null,"Debe seleccionar un archivo .asm");
+            JOptionPane.showMessageDialog(null,"Debe seleccionar un archivo .vm");
         }
     }//GEN-LAST:event_btnTraducirActionPerformed
 
@@ -185,7 +185,7 @@ public class jfPrincipal extends javax.swing.JFrame {
     
     void escribirArchivo(String contenido){
         
-        JOptionPane.showMessageDialog(null,"Seleccione donde quiere guardar el archivo .hack");
+        JOptionPane.showMessageDialog(null,"Seleccione donde quiere guardar el archivo .asm");
         JFileChooser fc = new JFileChooser();     
         fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         
@@ -194,7 +194,7 @@ public class jfPrincipal extends javax.swing.JFrame {
         if(seleccion == JFileChooser.APPROVE_OPTION){     
             File fichero=fc.getSelectedFile();
             
-            if(Escritor.Escribir(fichero.getAbsolutePath() + "\\" + nombreArchivo + ".hack", contenido)){
+            if(Escritor.Escribir(fichero.getAbsolutePath() + "\\" + nombreArchivo + ".asm", contenido)){
                 JOptionPane.showMessageDialog(null,"Archivo traducido correctamente");
             }
             else{
